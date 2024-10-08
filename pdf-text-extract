@@ -1,0 +1,6 @@
+from pdfminer.high_level import extract_text
+#insert filepath of the desired source PDF below
+text = extract_text('.pdf')
+#insert desired output filepath below
+with open('.txt', 'w') as f:
+    f.write(text)
