@@ -1,0 +1,9 @@
+from PyPDF2 import PdfWriter, PdfReader
+#insert filepath to the multi-page PDF you wish to split in the quotes below
+input_pdf = PdfReader("")
+for i in range(532):
+    output = PdfWriter()
+    output.add_page(input_pdf.pages[i])
+#add the desired output filepath for your single-page PDFs below to the left of the {}s. the {}s insert zero-indexed page numbers into the filename
+    with open("{}.pdf".format(i), "wb") as output_stream:
+        output.write(output_stream)
